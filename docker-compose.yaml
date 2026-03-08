@@ -1,7 +1,7 @@
 services:
   db:
     image: postgres:17.2
-    container_name: gobe-002-db
+    container_name: sample-project-db
     restart: always
     environment:
       POSTGRES_DB: base
