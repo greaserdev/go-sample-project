@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:17.2
+    container_name: gobe-002-db
+    restart: always
+    environment:
+      POSTGRES_DB: base
+      POSTGRES_USER: base
+      POSTGRES_PASSWORD: base
+    ports:
+      - "5433:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:
