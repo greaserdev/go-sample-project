@@ -2,6 +2,7 @@ package schema
 
 import (
 	"entgo.io/ent"
+	"entgo.io/ent/schema/edge"
 	"entgo.io/ent/schema/field"
 )
 
@@ -18,14 +19,16 @@ func (User) Fields() []ent.Field {
 		field.String("last_name").NotEmpty().MaxLen(100),
 		field.Time("verified_at").SchemaType(map[string]string{
 			"postgres": "timestamptz",
-		}),
-		field.String("avatar_url").Nillable(),
+		}).Optional().Nillable(),
+		field.String("avatar_url").Nillable().Optional(),
 	}
 }
 
 // Edges of the User.
 func (User) Edges() []ent.Edge {
-	return nil
+	return []ent.Edge{
+		edge.From("credential", Credentials.Type).Ref("user").Unique(),
+	}
 }
 
 // Mixin of the User
