@@ -3,8 +3,10 @@ module golang-oauth-tutor
 go 1.26
 
 require (
+	entgo.io/ent v0.14.5
 	github.com/gin-contrib/cors v1.7.6
 	github.com/gin-gonic/gin v1.12.0
+	github.com/google/uuid v1.3.0
 	github.com/google/wire v0.7.0
 	github.com/joho/godotenv v1.5.1
 	golang.org/x/oauth2 v0.35.0
@@ -12,7 +14,6 @@ require (
 
 require (
 	cloud.google.com/go/compute/metadata v0.9.0 // indirect
-	entgo.io/ent v0.14.5 // indirect
 	github.com/bytedance/gopkg v0.1.3 // indirect
 	github.com/bytedance/sonic v1.15.0 // indirect
 	github.com/bytedance/sonic/loader v0.5.0 // indirect
